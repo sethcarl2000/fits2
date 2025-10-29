@@ -1,4 +1,4 @@
-// fit_user.C
+// User_fit.C
 // example of fitting with a user defined function
 
 // A function producing two peaks on top of an exponentialy 
@@ -24,7 +24,7 @@ Double_t myfunction(Double_t *xin, Double_t *par) {
 }
 
 
-void fit_user(int entries=100000) {
+void User_fit(int entries=100000) {
    //Simple histogram fitting examples
 
   TFile *f=new TFile("data1.root","recreate");
