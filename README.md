@@ -1,5 +1,9 @@
 # fits2
 
+> [!NOTE]
+> I couldn't get ROOT to work in the Jupyter notebook, so i made a root-macro ```fit_histo.C``` which does the fitting & plotting. I have saved an output of this script under ```fit_info.txt```, and I saved an example output plot under ```fit_result.pdf```
+
+
 Fitting examples:
 
   * User_fit.ipynb(C) : starter code and example for fitting an arbitrary function with ROOT
