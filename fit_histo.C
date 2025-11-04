@@ -68,7 +68,7 @@ int fit_histo(const char* path_file, const char* histo_name)
     legend->Draw(); 
 
 
-    auto hist_resid = new TH1F("h_resid", "Residuals", 15, -35, 35); 
+    auto hist_resid = new TH1F("h_resid", "Residuals", 30, -10, 10); 
     vector<double> bins, residuals;
     auto ax = hist->GetXaxis();  
     for (int b=1; b<=ax->GetNbins(); b++) {
@@ -76,7 +76,7 @@ int fit_histo(const char* path_file, const char* histo_name)
         const double x = ax->GetBinCenter(b); 
         
         bins     .push_back(x); 
-        residuals.push_back(hist->GetBinContent(b) - tf1->Eval(x));
+        residuals.push_back( (hist->GetBinContent(b) - tf1->Eval(x))/hist->GetBinError(b) );
         hist_resid->Fill( residuals.back() ); 
     }
 
@@ -92,7 +92,7 @@ int fit_histo(const char* path_file, const char* histo_name)
     
 
     c->cd(3); 
-    hist_resid->SetStats(0);
+    hist_resid->SetStats(1);
     hist_resid->SetTitle("Dist. of Residuals"); 
     hist_resid->Draw("HIST"); 
 
