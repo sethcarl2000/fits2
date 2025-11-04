@@ -1,0 +1,10 @@
+
+Processing fit_histo.C("datadist.root", "h")...
+Results of fit:
+ sigma     - 4.2271 +/- 0.1713
+ mean      - 7.3620 +/- 0.1236
+ height    - 76.4024 +/- 1.9558
+
+ Reduced chi^2     -   1.3820
+ P-value:          -   0.0423
+(int) 0
